@@ -1,6 +1,9 @@
 #!/usr/bin/python3
-def best_score(a_dictionary):
-    if not a_dictionary:
-        return (None)
+"""
+https://thepythonguru.com/python-builtin-functions/max/
+"""
 
-    return (max(a_dictionary, key=a_dictionary.get))
+
+def best_score(a_dictionary):
+    if (a_dictionary):
+        return(max(a_dictionary, key=a_dictionary.get))

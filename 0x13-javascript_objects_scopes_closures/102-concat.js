@@ -1,12 +1,8 @@
 #!/usr/bin/node
+// script that concats 2 files
 
-const fs = require('fs').promises;
-const { argv } = require('process');
-
-fs.readFile(argv[2], 'utf8')
-  .then(data => fs.writeFile(argv[4], data, 'utf8'))
-  .catch(err => console.error(err));
-
-fs.readFile(argv[3], 'utf8')
-  .then(data => fs.writeFile(argv[4], data, { flag: 'a' }, 'utf8'))
-  .catch(err => console.error(err));
+const args = process.argv.slice(2);
+const file = require('fs');
+const contentA = file.readFileSync('./' + args[0]);
+const contentB = file.readFileSync('./' + args[1]);
+file.writeFileSync('./' + args[2], contentA + contentB);

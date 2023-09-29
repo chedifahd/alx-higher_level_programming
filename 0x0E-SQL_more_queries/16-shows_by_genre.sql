@@ -1,9 +1,9 @@
--- Select with 2 LEFT JOIN return NULL
--- Execute: cat 16-shows_by_genre.sql | mysql -hlocalhost -uroot -p hbtn_0d_tvshows
-SELECT A.title, C.name
-FROM tv_shows A
-LEFT JOIN tv_show_genres B
-ON A.id = B.show_id
-LEFT JOIN tv_genres C
-ON B.genre_id = C.id
-ORDER BY 1,2 ASC;
+-- Lists all shows, and all genres linked to that show,
+-- from the database hbtn_0d_tvshows.
+
+SELECT tv_shows.title, tv_genres.name
+FROM tv_shows LEFT OUTER JOIN tv_show_genres
+ON tv_show_genres.show_id = tv_shows.id
+LEFT OUTER JOIN tv_genres
+ON tv_show_genres.genre_id = tv_genres.id
+ORDER BY tv_shows.title, tv_genres.name;

@@ -1,1 +1,1 @@
-hi
+# 0x05. Python - Exceptions

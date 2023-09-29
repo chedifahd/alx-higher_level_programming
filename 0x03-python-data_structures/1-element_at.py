@@ -1,9 +1,8 @@
 #!/usr/bin/python3
-# 1-element_at.py
-
-
 def element_at(my_list, idx):
-    """Retrive an element from a list."""
-    if idx < 0 or idx > (len(my_list) - 1):
-        return None
-    return (my_list[idx])
+    size = len(my_list)
+    if (idx < 0 or idx > size - 1):
+        return (None)
+    for i, e in enumerate(my_list):
+        if (i == idx):
+            return (e)
